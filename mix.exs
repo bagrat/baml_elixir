@@ -38,6 +38,7 @@ defmodule BamlElixir.MixProject do
 
   defp package do
     [
+      name: "bamlixir",
       files: [
         "lib",
         "checksum-*.exs",
@@ -45,8 +46,8 @@ defmodule BamlElixir.MixProject do
         "LICENSE"
       ],
       licenses: ["Apache-2.0"],
-      links: %{"GitHub" => "https://github.com/emilsoman/baml_elixir"},
-      maintainers: ["Emil Soman"]
+      links: %{"GitHub" => "https://github.com/bagrat/baml_elixir"},
+      maintainers: ["bagrat"]
     ]
   end
 end
