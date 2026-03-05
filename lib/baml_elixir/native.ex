@@ -2,7 +2,7 @@ defmodule BamlElixir.Native do
   version = Mix.Project.config()[:version]
 
   use RustlerPrecompiled,
-    otp_app: :baml_elixir,
+    otp_app: :bamlixir,
     base_url: "https://github.com/bagrat/baml_elixir/releases/download/v#{version}/",
     force_build: System.get_env("BAML_ELIXIR_BUILD") in ["1", "true"],
     version: version,

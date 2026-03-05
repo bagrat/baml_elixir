@@ -1,11 +1,11 @@
 defmodule BamlElixir.MixProject do
   use Mix.Project
 
-  @version "1.0.0-baml0.219.0"
+  @version "1.0.1-baml0.219.0"
 
   def project do
     [
-      app: :baml_elixir,
+      app: :bamlixir,
       description: "Call BAML functions from Elixir.",
       version: @version,
       elixir: "~> 1.17",
