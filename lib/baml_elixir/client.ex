@@ -35,7 +35,8 @@ defmodule BamlElixir.Client do
     baml_enum_types = baml_types[:enums]
     baml_functions = baml_types[:functions]
 
-    baml_class_types_quoted = generate_class_types(baml_class_types, __CALLER__)
+    class_body = Keyword.get(opts, :inject_code, nil)
+    baml_class_types_quoted = generate_class_types(baml_class_types, __CALLER__, class_body)
     baml_enum_types_quoted = generate_enum_types(baml_enum_types, __CALLER__)
     baml_functions_quoted = generate_function_modules(baml_functions, path, __CALLER__)
     recompile_function = generate_recompile_function(baml_src_path, baml_files)
@@ -239,7 +240,7 @@ defmodule BamlElixir.Client do
 
   # Every class in the BAML source file is converted to an Elixir module
   # with a `defstruct/1` and a `@type t/0` type.
-  defp generate_class_types(class_types, caller) do
+  defp generate_class_types(class_types, caller, class_body) do
     module = caller.module
 
     for {type_name, %{"fields" => fields, "dynamic" => dynamic}} <- class_types do
@@ -249,6 +250,7 @@ defmodule BamlElixir.Client do
 
       quote do
         defmodule unquote(module_name) do
+          unquote(class_body)
           defstruct unquote(field_names)
           @type t :: %__MODULE__{unquote_splicing(field_types)}
 
@@ -492,9 +494,10 @@ defmodule BamlElixir.Client do
   end
 
   defp to_map(args) when is_struct(args) do
-    args
-    |> Map.from_struct()
-    |> to_map()
+    case BamlElixir.Encoder.encode(args) do
+      ^args -> args |> Map.from_struct() |> to_map()
+      encoded -> to_map(encoded)
+    end
   end
 
   defp to_map(args) when is_map(args) do
@@ -503,6 +506,14 @@ defmodule BamlElixir.Client do
 
   defp to_map(args) when is_list(args) do
     Enum.map(args, &to_map/1)
+  end
+
+  defp to_map(args) when is_tuple(args) do
+    args |> Tuple.to_list() |> to_map()
+  end
+
+  defp to_map(args) when is_atom(args) and args not in [true, false, nil] do
+    Atom.to_string(args)
   end
 
   defp to_map(args) do
