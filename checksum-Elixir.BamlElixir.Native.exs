@@ -1,7 +1,7 @@
 %{
-  "libbaml_elixir-v1.2.0-baml0.219.0-nif-2.15-aarch64-apple-darwin.so.tar.gz" => "sha256:86570eabac7675978dad963d29b687cd5523172955471030ca97a538e96afa12",
-  "libbaml_elixir-v1.2.0-baml0.219.0-nif-2.15-aarch64-unknown-linux-gnu.so.tar.gz" => "sha256:8dee1f109d2e77373a8c51dac8361dd71b52b33d2f5542373292b2b604bc57ae",
-  "libbaml_elixir-v1.2.0-baml0.219.0-nif-2.15-aarch64-unknown-linux-musl.so.tar.gz" => "sha256:8e48ff4517ee9af494b6ac56390aead12043479885d2ff43a273447e990ffa46",
-  "libbaml_elixir-v1.2.0-baml0.219.0-nif-2.15-x86_64-unknown-linux-gnu.so.tar.gz" => "sha256:66ec339cee709dd97216058211311987d42cc897acae4fc48868741edd9a12a9",
-  "libbaml_elixir-v1.2.0-baml0.219.0-nif-2.15-x86_64-unknown-linux-musl.so.tar.gz" => "sha256:a68b61d8c9059e9a052398db2bb04f617f380160f05d6ed3b41438007dcc00ac"
+  "libbaml_elixir-v1.3.0-baml0.222.0-nif-2.15-aarch64-apple-darwin.so.tar.gz" => "sha256:f723839f1a08b42b5d7c038e7989dd3e4c33b5ecea25e0915d6c99a5b73980b8",
+  "libbaml_elixir-v1.3.0-baml0.222.0-nif-2.15-aarch64-unknown-linux-gnu.so.tar.gz" => "sha256:6484c925e2d6f8620f1158795bf859adf31900ea2cd9de7e136be94f1233e796",
+  "libbaml_elixir-v1.3.0-baml0.222.0-nif-2.15-aarch64-unknown-linux-musl.so.tar.gz" => "sha256:2c23fa7102a5a5ab223dd723b1fecc3c95fe2c83cabde85deff4e4ca8d6760c0",
+  "libbaml_elixir-v1.3.0-baml0.222.0-nif-2.15-x86_64-unknown-linux-gnu.so.tar.gz" => "sha256:3e826a17b6be821af18d3b2b98a5b1ea7ba461a74bdef86b5831283609ffff3e",
+  "libbaml_elixir-v1.3.0-baml0.222.0-nif-2.15-x86_64-unknown-linux-musl.so.tar.gz" => "sha256:ceb27cb216bbcace80b4ead5857663821c5c175c04e6e918b3139f7ba4f1e603"
 }
